@@ -1,10 +1,11 @@
 import useStore from "../store/CartStore.js";
 import { toast } from "react-toastify";
-
+ import notificationsound from '/sound/removedSound.wav'
 function Cart() {
   //toastify
-  const Removenotify = () =>
-    toast("Removed From cart successfully", {
+  const Removenotify = () =>{
+    toast("Removed From cart successfully"
+  , {
       position: "top-right",
       autoClose: 2000,
       hideProgressBar: false,
@@ -13,9 +14,19 @@ function Cart() {
       draggable: true,
       progress: undefined,
       color: "light",
-    });
-  const Clearnotify = () =>
-    toast("All Carts Removed ", {
+    } 
+    )
+      playSound();
+  }
+
+  function playSound(){
+ const audio =new Audio(notificationsound)
+ audio.play();
+  }
+ 
+const Clearnotify = () =>{
+    toast("All items Removed"
+  , {
       position: "top-right",
       autoClose: 2000,
       hideProgressBar: false,
@@ -24,7 +35,10 @@ function Cart() {
       draggable: true,
       progress: undefined,
       color: "light",
-    });
+    } 
+    )
+      playSound();
+  }
 
   const { clearCart, removeItem, cartItems, totalPrice } = useStore();
 

@@ -6,8 +6,8 @@ const useStore = create((set) => ({
   increase: () => set((state) => ({ count: state.count + 1 })),
   cartItems: [],
   addToCart: (data) => set((state) => ({ cartItems: [...state.cartItems, data],
-      clearCart: () => set({ cartItems: [] }),
-      removeItem: (id) => set((state) => ({cartItems: state.cartItems.filter((data) => data.id !== id)}))
+      clearCart: () => set({ cartItems: [] ,count:0}),
+      removeItem: (id) => set((state) => ({cartItems: state.cartItems.filter((data) => data.id !== id),count:state.count-1}))
 
     }))
  } ))

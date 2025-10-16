@@ -3,13 +3,14 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import useStore from "../store/CartStore.js";
 import { toast } from "react-toastify";
+import notificationsound from '/sound/addedSound.wav'
 const Products = () => {
   const { increase,addToCart } = useStore();
       
-
-  //toastify
-  const notify = () =>
-    toast("Added to cart successfully", {
+ //toastify
+  const notify = () =>{
+    toast(" Added To Cart Successfully"
+  , {
       position: "top-right",
       autoClose: 2000,
       hideProgressBar: false,
@@ -18,11 +19,16 @@ const Products = () => {
       draggable: true,
       progress: undefined,
       color: "light",
-    }
+    } 
+    )
+      playSound();
+  }
 
-  
-  
-  );
+  function playSound(){
+ const audio =new Audio(notificationsound)
+ audio.play();
+  }
+ 
 
   const [items, setItems] = useState([]);
 
