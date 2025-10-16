@@ -2,24 +2,38 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import useStore from "../store/CartStore.js";
-
+import { toast } from "react-toastify";
 const Products = () => {
-  const { increase } = useStore();
+  const { increase,addToCart } = useStore();
+      
+
+  //toastify
+  const notify = () =>
+    toast("Added to cart successfully", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      color: "light",
+    }
+
+  
+  
+  );
 
   const [items, setItems] = useState([]);
 
   const fetchdata = async () => {
     const response = await axios.get("https://fakestoreapi.com/products");
-    console.log(response.data);
     setItems(response.data);
   };
 
-
-useEffect(() => {
-fetchdata();
-}, []);
-
-
+  useEffect(() => {
+    fetchdata();
+  }, []);
 
   return (
     <ul className="flex flex-wrap gap-6 justify-center p-4">
@@ -45,7 +59,12 @@ fetchdata();
             </p>
           </div>
           <button
-            onClick={increase}
+            onClick={() => {
+              increase();
+              notify(); 
+              addToCart(data);
+
+            }}
             className="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition"
           >
             Add to Cart
@@ -56,4 +75,4 @@ fetchdata();
   );
 };
 
-export default Products
+export default Products;

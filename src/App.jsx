@@ -5,19 +5,19 @@ import PageNotFound from "./Pages/PageNotFound";
 import AppLayout from "./Components/Layout/AppLayout";
 import Products from "./Pages/Products";
 import Cart from "./Pages/Cart";
- import Payment from './Pages/Payment'
- import { Suspense } from 'react';
+import Payment from "./Pages/Payment";
+
 const App = () => {
   return (
     <>
       <BrowserRouter>
         <Routes>
+    
           <Route element={<AppLayout />}>
             <Route path="/" element={<Home />} />
-     
-  <Route path="products" element={<Products />} />
 
-            
+            <Route path="products" element={<Products />} />
+
             <Route path="cart" element={<Cart />} />
             <Route path="/payment" element={<Payment />} />
 
