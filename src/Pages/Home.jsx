@@ -4,7 +4,7 @@ import Contact from './Contact'
 const Home = () => {
   return (
     <div>
-      Home
+     
       <Services/>
       <Contact/>
     </div>

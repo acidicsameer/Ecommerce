@@ -5,6 +5,8 @@ import PageNotFound from "./Pages/PageNotFound";
 import AppLayout from "./Components/Layout/AppLayout";
 import Products from "./Pages/Products";
 import Cart from "./Pages/Cart";
+ import Payment from './Pages/Payment'
+ import { Suspense } from 'react';
 const App = () => {
   return (
     <>
@@ -12,8 +14,12 @@ const App = () => {
         <Routes>
           <Route element={<AppLayout />}>
             <Route path="/" element={<Home />} />
-            <Route path="products" element={<Products />} />
+     
+  <Route path="products" element={<Products />} />
+
+            
             <Route path="cart" element={<Cart />} />
+            <Route path="/payment" element={<Payment />} />
 
             <Route path="*" element={<PageNotFound />} />
           </Route>

@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import  useStore  from  '/src/store/CartStore.js'
 const Navbar = () => {
+     const  {count}=useStore();
   return (
      <nav class="bg-gray-900 text-white shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -8,7 +10,7 @@ const Navbar = () => {
                 <div class="flex items-center">
                     <Link to="#" class="flex-shrink-0 flex items-center">
                         <img class="h-8 w-auto" src="https://tailwindflex.com/images/logo.svg" alt="Logo"/>
-                        <span class="ml-2 text-xl font-bold">Navbar</span>
+                        <span class="ml-2 text-xl font-bold">S2B4 Ecommerce site</span>
                     </Link>
                     <div class="hidden md:ml-6 md:flex md:space-x-8">
                         <Link to="/" class="text-white border-b-2 border-indigo-500 px-1 pt-1 inline-flex items-center text-sm font-medium">
@@ -26,6 +28,39 @@ const Navbar = () => {
                          <Link to="#contact" class="text-gray-300 hover:text-white border-b-2 border-transparent hover:border-gray-300 px-1 pt-1 inline-flex items-center text-sm font-medium">
                             Contact
                         </Link>
+
+<Link to ="/cart"> <div className="flex items-center space-x-4">
+      {/* Cart Icon */}
+
+      <div className="relative">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-10 w-10 text-gray-700"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.5 7h11l-1.5-7M7 13h10M16 21a1 1 0 100-2 1 1 0 000 2zm-8 0a1 1 0 100-2 1 1 0 000 2z"
+          />
+        </svg>
+
+        {/* Notification Badge */}
+        {count > 0 && (
+          <span className="absolute -top-1 -right-1 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold">
+            {count}
+          </span>
+        )}
+      </div>
+                    </div></Link>
+
+                  
+
+
+
                     </div>
                 </div>
                 <div class="flex items-center">
