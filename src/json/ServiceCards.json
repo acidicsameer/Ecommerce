@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Free & Fast Shipping",
+    "icon": "/src/assets/images/free.png",
+    "description": "Enjoy reliable delivery at no extra cost on every order."
+  },
+  {
+    "title": "Easy Returns",
+    "icon": "/src/assets/images/return.png",
+    "description": "Return within 14–30 days — hassle-free, no questions asked."
+  },
+  {
+    "title": "24/7 Customer Support",
+    "icon": "/src/assets/images/customersupport.png",
+    "description": "We're here for you anytime via email, chat, or phone."
+  },
+  {
+    "title": "Secure Payments",
+    "icon": "/src/assets/images/lock.png",
+    "description": "Shop with confidence — all transactions are protected with top-level encryption."
+  },
+  {
+    "title": "Premium Quality",
+    "icon": "/src/assets/images/premium.png",
+    "description": "We offer only high-quality, authentic products — guaranteed."
+  },
+  {
+    "title": "Multiple Payment Options",
+    "icon": "/src/assets/images/payment.png",
+    "description": "Choose your preferred way to pay: Cards, PayPal, UPI, or COD."
+  },
+  {
+    "title": "Loyalty Rewards",
+    "icon": "/src/assets/images/loyalty.png",
+    "description": "Earn points on every order and enjoy exclusive discounts."
+  },
+  {
+    "title": "Worldwide Shipping",
+    "icon": "/src/assets/images/worldwide.png",
+    "description": "We deliver across the globe — fast and safe."
+  }
+]
