@@ -13,39 +13,14 @@ const HeroSection = () => {
     autoplaySpeed: 4000,
     slidesToShow: 1,
     slidesToScroll: 1,
-
     pauseOnHover: false,
     swipeToSlide: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+
   };
   return (
   <div className="bg-white h-[90vh] flex flex-wrap items-center ">
       
-      <div className="w-full sm:w-2/3 lg:w-2/5 px-6 md:px-10 flex flex-col z-20 space-y-4">
+      <div className="w-full sm:w-2/3 lg:w-2/5 px-6 md:px-10 flex flex-col z-20 space-y-4 sm:p-10 p-2">
         <span className="w-20 h-1 bg-gray-800 dark:bg-white mb-4"></span>
 
         <h1 className="font-poppins uppercase text-green-600 text-4xl sm:text-6xl lg:text-7xl font-black leading-tight break-words max-w-full">
