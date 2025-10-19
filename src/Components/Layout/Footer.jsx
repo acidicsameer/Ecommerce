@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <>
-      <div class="bg-gray-900 text-white font-sans">
+      <div class="bg-white  text-black  relative bottom-0 font-sans">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between py-12 px-4 gap-10 items-center lg:items-start">
           {/* <!-- Left Section --> */}
           <div class="flex flex-col justify-start items-center lg:items-start space-y-8 w-full lg:w-[1080px]">
             <div class="flex items-center space-x-4">
-              <p class="text-[16px] text-gray-400">Follow us on</p>
+              <p class="text-[16px] text-black">Follow us on</p>
 
               {/* <!-- Facebook --> */}
               {/* <!-- Facebook --> */}
@@ -67,16 +67,16 @@ const Footer = () => {
           <div class="flex flex-col items-center lg:items-start space-y-3 lg:w-1/2 gap-4">
             <div class="flex flex-row lg:flex-row items-center lg:items-start lg:space-y-3 gap-4 lg:gap-5">
               <Link to="/">
-                <p class="text-[18px] text-white">Home</p>
+                <p class="text-[18px] text-black">Home</p>
               </Link>
               <Link to="/products">
-                <p class=" text-[18px] text-white">Products</p>
+                <p class=" text-[18px] text-black">Products</p>
               </Link>
               <Link to="/cart">
-                <p class=" text-[18px] text-white">Cart</p>
+                <p class=" text-[18px] text-black">Cart</p>
               </Link>
               <Link to="#services">
-                <p class=" text-[18px] text-white">Services</p>
+                <p class=" text-[18px] text-black">Services</p>
               </Link>
               <Link to="#contact">
                 <p class=" text-[18px] text-white">Contact</p>
@@ -87,7 +87,7 @@ const Footer = () => {
 
         <div class="border-t border-gray-700">
           <div class=" flex  justify-center  items-center w-full p-5">
-            <p class="text-sm text-gray-400 text-center md:text-left">
+            <p class="text-sm text-black text-center md:text-left">
               © All rights reserved.
             </p>
           </div>

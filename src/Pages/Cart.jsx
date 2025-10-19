@@ -1,8 +1,8 @@
 import useStore from "../store/CartStore.js";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
  import notificationsound from '/sound/removedSound.wav'
 function Cart() {
-  //toastify
   const Removenotify = () =>{
     toast("Removed From cart successfully"
   , {
@@ -40,14 +40,23 @@ const Clearnotify = () =>{
       playSound();
   }
 
-  const { clearCart, removeItem, cartItems, totalPrice } = useStore();
+  const { clearCart,count,removeItem, cartItems,totalCost,shippingCost} = useStore();
 
   return (
-    <div className="max-w-4xl mx-auto p-4">
+    <div className=" flex justify-center items-center">
+    <div className="w-1/2 mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4">🛒 Your Cart</h2>
 
       {cartItems.length === 0 ? (
-        <p className="text-gray-500">Cart is empty</p>
+        <div>
+        <p className="text-gray-500 text-xl ">Cart is empty</p> 
+        <Link to ="/products">
+        <button className="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+      Buy Now
+    </button></Link>
+       
+         
+      </div>
       ) : (
         <div className="space-y-4">
           {cartItems.map((data, id) => (
@@ -62,33 +71,64 @@ const Clearnotify = () =>{
               />
               <div>
                 <p className="font-medium text-lg">{data.title}</p>
-                <p className="text-gray-600">${totalPrice}</p>
+                <p className="font-medium text-lg">{data.price}</p>
+
               </div>
               <button
                 onClick={() => {
                   removeItem(data.id);
                   Removenotify();
                 }}
-                className="bg-black text-white p-2 m-1 "
+             className=" bg-red-600  text-white font-semibold py-3 px-6 rounded-lg transition duration-300 "
               >
-                {" "}
                 Remove
               </button>
+              
             </div>
           ))}{" "}
-          <button
-            onClick={() => {
-              clearCart();
-              Clearnotify();
-            }}
-            className="bg-black text-white p-4 m-2 "
-          >
-            {" "}
-            Clear cart
-          </button>
+         <div className="flex flex-col md:flex-row gap-4 m-4">
+  {/* Clear Cart Button */}
+  <button
+    onClick={() => {
+      clearCart();
+      Clearnotify();
+    }}
+    className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
+  >
+    Clear All Cart
+  </button>
+
+  {/* Pay Now Button with Link */}
+  <Link to="/payment">
+    <button className="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+      Pay Now
+    </button>
+  </Link>
+</div>
+
         </div>
       )}
     </div>
+   <div className="w-1/2  items-center    flex flex-col p-5 bg-white rounded-lg   ">
+  <h2 className="text-xl font-semibold mb-4 text-gray-800">Your Product Details</h2>
+    
+  <div className="space-y-2 text-gray-700">
+    <p className="text-base">
+      <span className="font-medium">Total Items:</span> {count}
+    </p>
+
+    <p className="text-base">
+      <span className="font-medium">Shipping Cost:</span> ${shippingCost}
+    </p>
+
+    <p className="text-base">
+      <span className="font-medium">Total Cost:</span> ${totalCost+shippingCost}
+    </p>
+  </div>
+</div>
+</div>
+
+
   );
 }
 
