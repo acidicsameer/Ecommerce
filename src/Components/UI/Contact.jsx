@@ -6,6 +6,13 @@ import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import notificationsound from "/sound/removedSound.wav";
+const ServiceId = import.meta.env.VITE_serviceid;
+const TemplateID = import.meta.env.VITE_templateid;
+const publicKey = import.meta.env.VITE_publickey;
+
+
+
+
 const Contact = () => {
   const form = useRef();
   const {
@@ -19,8 +26,8 @@ const Contact = () => {
 
   const onSubmit = () => {
     emailjs
-      .sendForm("service_hx6alxx", "template_mnvcy52", form.current, {
-        publicKey: "KmfDbmHZ73TOJiPYY",
+      .sendForm(ServiceId, TemplateID, form.current, {
+        publicKey: publicKey,
       })
       .then(
         () => {
